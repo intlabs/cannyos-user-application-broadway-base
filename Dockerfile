@@ -38,7 +38,6 @@ WORKDIR /
 RUN sed -i -e 's/PermitRootLogin without-password/PermitRootLogin yes/g' /etc/ssh/sshd_config && /etc/init.d/ssh restart
 
 #Install the broadway gtk3 ppa for ubuntu
-RUN apt-get install software-properties-common python-software-properties -y
 RUN add-apt-repository ppa:malizor/gtk-next-broadway -y
 RUN apt-get update
 RUN apt-get upgrade -y
