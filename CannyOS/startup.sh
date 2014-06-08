@@ -53,8 +53,6 @@ broadwayd&
 #Set GDK backend
 GDK_BACKEND=broadway
 
-gedit
-
 echo ""
 echo "*****************************************************"
 echo "*                                                   *"
