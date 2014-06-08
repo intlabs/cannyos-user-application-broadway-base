@@ -50,6 +50,10 @@ echo ""
 #Start Broadway server
 broadwayd&
 
+#Set GDK backend
+GDK_BACKEND=broadway
+
+gedit
 
 echo ""
 echo "*****************************************************"
