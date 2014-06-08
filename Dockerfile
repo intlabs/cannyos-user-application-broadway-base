@@ -1,7 +1,7 @@
 #
 # CannyOS User Storage Dropbox
 #
-# https://github.com/intlabs/cannyos-ubuntu-application-broadway-base
+# https://github.com/intlabs/cannyos-user-application-broadway-base
 #
 # Copyright 2014 Pete Birley
 #

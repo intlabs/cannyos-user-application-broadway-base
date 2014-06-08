@@ -1,8 +1,8 @@
 #!/bin/sh
 #
-# CannyOS cannyos-ubuntu-application-broadway-base container build script
+# CannyOS cannyos-user-application-broadway-base container build script
 #
-# https://github.com/intlabs/cannyos-ubuntu-application-broadway-base
+# https://github.com/intlabs/cannyos-user-application-broadway-base
 #
 # Copyright 2014 Pete Birley
 #
@@ -19,7 +19,7 @@
 # limitations under the License.
 #
 clear
-curl https://raw.githubusercontent.com/intlabs/cannyos-ubuntu-application-broadway-base/master/CannyOS/CannyOS.splash
+curl https://raw.githubusercontent.com/intlabs/cannyos-user-application-broadway-base/master/CannyOS/CannyOS.splash
 #     *****************************************************
 #     *                                                   *
 #     *        _____                    ____  ____        *
@@ -37,7 +37,7 @@ echo "*****************************************************"
 echo ""
 
 # Build base container image
-sudo docker build -t="intlabs/cannyos-ubuntu-application-broadway-base" github.com/intlabs/cannyos-ubuntu-application-broadway-base
+sudo docker build -t="intlabs/cannyos-user-application-broadway-base" github.com/intlabs/cannyos-user-application-broadway-base
 
 echo ""
 echo "*****************************************************"
@@ -48,18 +48,18 @@ echo "*****************************************************"
 echo ""
 
 # Make shared directory on host
-sudo mkdir -p "/CannyOS/build/cannyos-ubuntu-application-broadway-base"
+sudo mkdir -p "/CannyOS/build/cannyos-user-application-broadway-base"
 # Ensure that there it is clear
-sudo rm -r -f "/CannyOS/build/cannyos-ubuntu-application-broadway-base/*"
+sudo rm -r -f "/CannyOS/build/cannyos-user-application-broadway-base/*"
 
 # Remove any existing containers
-sudo docker stop cannyos-ubuntu-application-broadway-base
+sudo docker stop cannyos-user-application-broadway-base
 
 # Launch built base container image
 sudo docker run -i -t --rm \
  --privileged=true --lxc-conf="native.cgroup.devices.allow = c 10:229 rwm" \
- --volume "/CannyOS/build/cannyos-ubuntu-application-broadway-base":"/CannyOS/Host" \
- --name "cannyos-ubuntu-application-broadway-base" \
+ --volume "/CannyOS/build/cannyos-user-application-broadway-base":"/CannyOS/Host" \
+ --name "cannyos-user-application-broadway-base" \
  --user "root" \
  -p 80:8080 \
- intlabs/cannyos-ubuntu-application-broadway-base 
+ intlabs/cannyos-user-application-broadway-base 
